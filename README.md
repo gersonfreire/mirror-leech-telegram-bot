@@ -1,4 +1,4 @@
-This is a Telegram Bot written in Python for mirroring files on the Internet to your Google Drive, Telegram or to any rclone supported cloud. Based on [python-aria-mirror-bot](https://github.com/lzzy12/python-aria-mirror-bot)
+nThis is a Telegram Bot written in Python for mirroring files on the Internet to your Google Drive, Telegram or to any rclone supported cloud. Based on [python-aria-mirror-bot](https://github.com/lzzy12/python-aria-mirror-bot)
 
 # Features
 
@@ -154,8 +154,10 @@ In each single file there is a major change from base code, it's almost totally 
 - Extract password protected files
 - Extract these filetypes
   > ZIP, RAR, TAR, 7z, ISO, WIM, CAB, GZIP, BZIP2, APM, ARJ, CHM, CPIO, CramFS, DEB, DMG, FAT, HFS, LZH, LZMA, LZMA2, MBR, MSI, MSLZ, NSIS, NTFS, RPM, SquashFS, UDF, VHD, XAR, Z, TAR.XZ
+  >
 - Direct links Supported:
   > mediafire (file/folders), hxfile.co, streamtape.com, streamsb.net, streamhub.ink, streamvid.net, doodstream.com, feurl.com, upload.ee, pixeldrain.com, racaty.net, 1fichier.com, 1drv.ms (Only works for file not folder or business account), filelions.com, streamwish.com, send.cm (file/folders), solidfiles.com, linkbox.to (file/folders), shrdsk.me (sharedisk.io), akmfiles.com, wetransfer.com, gofile.io (file/folders), easyupload.io, mdisk.me (with ytdl), terabox.com (file/folders) (you need to add cookies txt with name) [terabox.txt](https://github.com/ytdl-org/youtube-dl#how-do-i-pass-cookies-to-youtube-dl).
+  >
 
 # How to deploy?
 
@@ -164,7 +166,7 @@ In each single file there is a major change from base code, it's almost totally 
 - Tutorial Video from A to Z:
   - Thanks to [Wiszky](https://github.com/vishnoe115)
 
- <p><a href="https://youtu.be/IUmq1paCiHI"> <img src="https://img.shields.io/badge/See%20Video-black?style=for-the-badge&logo=YouTube" width="160""/></a></p>
+<p><a href="https://youtu.be/IUmq1paCiHI"> <img src="https://img.shields.io/badge/See%20Video-black?style=for-the-badge&logo=YouTube" width="160""/></a></p>
 
 ### 1. Installing requirements
 
@@ -191,10 +193,10 @@ sudo pacman -S docker python
 - Install dependencies for running setup scripts:
 
 ```
-pip3 install -r requirements-cli.txt
+
 ```
 
-------
+---
 
 ### 2. Setting up config file
 
@@ -214,8 +216,8 @@ Fill up rest of the fields. Meaning of each field is discussed below. **NOTE**: 
 
 - `BOT_TOKEN`: The Telegram Bot Token that you got from [@BotFather](https://t.me/BotFather). `Str`
 - `OWNER_ID`: The Telegram User ID (not username) of the Owner of the bot. `Int`
-- `TELEGRAM_API`: This is to authenticate your Telegram account for downloading Telegram files. You can get this from <https://my.telegram.org>. `Int`
-- `TELEGRAM_HASH`: This is to authenticate your Telegram account for downloading Telegram files. You can get this from <https://my.telegram.org>. `Str`
+- `TELEGRAM_API`: This is to authenticate your Telegram account for downloading Telegram files. You can get this from [App configuration (telegram.org)](https://my.telegram.org/apps). `Int`
+- `TELEGRAM_HASH`: This is to authenticate your Telegram account for downloading Telegram files. You can get this from [https://my.telegram.org](https://my.telegram.org). `Str`
 
 **2. Optional Fields**
 
@@ -241,7 +243,7 @@ Fill up rest of the fields. Meaning of each field is discussed below. **NOTE**: 
 
 - `GDRIVE_ID`: This is the Folder/TeamDrive ID of the Google Drive OR `root` to which you want to upload all the mirrors using google-api-python-client. `Str`
 - `IS_TEAM_DRIVE`: Set `True` if uploading to TeamDrive using google-api-python-client. Default is `False`. `Bool`
-- `INDEX_URL`: Refer to <https://gitlab.com/ParveenBhadooOfficial/Google-Drive-Index>. `Str`
+- `INDEX_URL`: Refer to [https://gitlab.com/ParveenBhadooOfficial/Google-Drive-Index](https://gitlab.com/ParveenBhadooOfficial/Google-Drive-Index). `Str`
 - `STOP_DUPLICATE`: Bot will check file/folder name in Drive incase uploading to `GDRIVE_ID`. If it's present in Drive then downloading or cloning will be stopped. (**NOTE**: Item will be checked using name and not hash, so this feature is not perfect yet). Default is `False`. `Bool`
 
 ### Rclone
@@ -298,11 +300,13 @@ Fill up rest of the fields. Meaning of each field is discussed below. **NOTE**: 
 
 - `SEARCH_API_LINK`: Search api app link. Get your api from deploying this [repository](https://github.com/Ryuk-me/Torrent-Api-py). `Str`
   - Supported Sites:
-  >1337x, Piratebay, Nyaasi, Torlock, Torrent Galaxy, Zooqle, Kickass, Bitsearch, MagnetDL, Libgen, YTS, Limetorrent, TorrentFunk, Glodls, TorrentProject and YourBittorrent
+
+  > 1337x, Piratebay, Nyaasi, Torlock, Torrent Galaxy, Zooqle, Kickass, Bitsearch, MagnetDL, Libgen, YTS, Limetorrent, TorrentFunk, Glodls, TorrentProject and YourBittorrent
+  >
 - `SEARCH_LIMIT`: Search limit for search api, limit for each site and not overall result limit. Default is zero (Default api limit for each site). `Int`
 - `SEARCH_PLUGINS`: List of qBittorrent search plugins (github raw links). I have added some plugins, you can remove/add plugins as you want. Main Source: [qBittorrent Search Plugins (Official/Unofficial)](https://github.com/qbittorrent/search-plugins/wiki/Unofficial-search-plugins). `List`
 
-------
+---
 
 ### 3. Build And Run the Docker Image
 
@@ -312,7 +316,7 @@ Make sure you still mount the app folder and installed the docker from official 
   1. Using official docker commands.
   2. Using docker-compose. (Recommended)
 
-------
+---
 
 #### Build And Run The Docker Image Using Official Docker Commands
 
@@ -344,7 +348,7 @@ sudo docker ps
 sudo docker stop id
 ```
 
-----
+---
 
 #### Build And Run The Docker Image Using docker-compose
 
@@ -390,7 +394,7 @@ sudo docker-compose up
 
 <p><a href="https://youtu.be/c8_TU1sPK08"> <img src="https://img.shields.io/badge/See%20Video-black?style=for-the-badge&logo=YouTube" width="160""/></a></p>
 
-------
+---
 
 #### Docker Notes
 
@@ -412,7 +416,7 @@ sudo docker image prune -a
 
 5. Check the number of processing units of your machine with `nproc` cmd and times it by 4, then edit `AsyncIOThreadsCount` in qBittorrent.conf.
 
-------
+---
 
 # Extras
 
@@ -445,7 +449,7 @@ ping - Ping the Bot
 help - All cmds with description
 ```
 
-------
+---
 
 ## Getting Google OAuth API credential file and token.pickle
 
@@ -471,7 +475,7 @@ pip3 install google-api-python-client google-auth-httplib2 google-auth-oauthlib
 python3 generate_drive_token.py
 ```
 
-------
+---
 
 ## Getting rclone.conf
 
@@ -479,7 +483,7 @@ python3 generate_drive_token.py
 2. Create new remote(s) using `rclone config` command.
 3. Copy rclone.conf from .config/rclone/rclone.conf to repo folder
 
-------
+---
 
 ## Upload
 
@@ -491,7 +495,7 @@ python3 generate_drive_token.py
 - Whenever you want to write path manually to use user rclone.conf that added from usetting then you must add the `mrcc:` at the beginning.
 - So in short, up: has 4 possible values which is: gd(Upload to GDRIVE_ID), rc(Upload to RCLONE_PATH), rcl(Select Rclone Path) and rclone_path(remote:path(owner rclone.conf) or mrcc:remote:path(user rclone.conf))
 
-------
+---
 
 ## UPSTREAM REPO (Recommended)
 
@@ -503,7 +507,7 @@ python3 generate_drive_token.py
 - In case you you filled `UPSTREAM_REPO` with your fork link be carefull also if you fetched the commits from the official repository.
 - The changes in your `UPSTREAM_REPO` will take affect only after restart.
 
-------
+---
 
 ## Bittorrent Seed
 
@@ -518,12 +522,12 @@ python3 generate_drive_token.py
 
 - Global options: `--seed-ratio` (0 means no limit) and `--seed-time` (0 means no seed) in aria.sh.
 
-------
+---
 
 ## Using Service Accounts for uploading to avoid user rate limit
 
->For Service Account to work, you must set `USE_SERVICE_ACCOUNTS` = "True" in config file or environment variables.
->**NOTE**: Using Service Accounts is only recommended while uploading to a Team Drive.
+> For Service Account to work, you must set `USE_SERVICE_ACCOUNTS` = "True" in config file or environment variables.
+> **NOTE**: Using Service Accounts is only recommended while uploading to a Team Drive.
 
 ### 1. Generate Service Accounts. [What is Service Account?](https://cloud.google.com/iam/docs/service-accounts)
 
@@ -531,15 +535,15 @@ Let us create only the Service Accounts that we need.
 
 **Warning**: Abuse of this feature is not the aim of this project and we do **NOT** recommend that you make a lot of projects, just one project and 100 SAs allow you plenty of use, its also possible that over abuse might get your projects banned by Google.
 
->**NOTE**: If you have created SAs in past from this script, you can also just re download the keys by running:
+> **NOTE**: If you have created SAs in past from this script, you can also just re download the keys by running:
 
 ```
 python3 gen_sa_accounts.py --download-keys $PROJECTID
 ```
 
->**NOTE:** 1 Service Account can upload/copy around 750 GB a day, 1 project can make 100 Service Accounts so you can upload 75 TB a day.
+> **NOTE:** 1 Service Account can upload/copy around 750 GB a day, 1 project can make 100 Service Accounts so you can upload 75 TB a day.
 
->**NOTE:** All people can copy `2TB/DAY` from each file creator (uploader account), so if you got error `userRateLimitExceeded` that doesn't mean your limit exceeded but file creator limit have been exceeded which is `2TB/DAY`.
+> **NOTE:** All people can copy `2TB/DAY` from each file creator (uploader account), so if you got error `userRateLimitExceeded` that doesn't mean your limit exceeded but file creator limit have been exceeded which is `2TB/DAY`.
 
 #### Two methods to create service accounts
 
@@ -622,18 +626,18 @@ Then add emails from emails.txt to Google Group, after that add this Google Grou
 python3 add_to_team_drive.py -d SharedTeamDriveSrcID
 ```
 
-------
+---
 
 ## Generate Database
 
 1. Go to `https://mongodb.com/` and sign-up.
 2. Create Shared Cluster.
 3. Press on `Database` under `Deployment` Header, your created cluster will be there.
-5. Press on connect, choose `Allow Access From Anywhere` and press on `Add IP Address` without editing the ip, then create user.
-6. After creating user press on `Choose a connection`, then press on `Connect your application`. Choose `Driver` **python** and `version` **3.6 or later**.
-7. Copy your `connection string` and replace `<password>` with the password of your user, then press close.
+4. Press on connect, choose `Allow Access From Anywhere` and press on `Add IP Address` without editing the ip, then create user.
+5. After creating user press on `Choose a connection`, then press on `Connect your application`. Choose `Driver` **python** and `version` **3.6 or later**.
+6. Copy your `connection string` and replace `<password>` with the password of your user, then press close.
 
-------
+---
 
 ## Multi Drive List
 
@@ -651,7 +655,7 @@ TD1 root https://example.dev
 TD2 0AO1JDB1t3i5jUk9PVA https://example.dev
 ```
 
------
+---
 
 ## Yt-dlp and Aria2c Authentication Using .netrc File
 
@@ -683,13 +687,13 @@ machine example.workers.dev password index_password
 
 Where host is the name of extractor (eg. instagram, Twitch). Multiple accounts of different hosts can be added each separated by a new line.
 
------
+---
 
 ## Donations
 
 <p> If you feel like showing your appreciation for this project, then how about buying me a coffee.</p>
 
-[!["Buy Me A Coffee"](https://storage.ko-fi.com/cdn/kofi2.png)](https://ko-fi.com/anasty17)
+[![](https://storage.ko-fi.com/cdn/kofi2.png)](https://ko-fi.com/anasty17)
 
 Binance ID:
 
@@ -721,12 +725,12 @@ ETH Address:
 0xf798a8a1c72d593e16d8f3bb619ebd1a093c7309
 ```
 
------
+---
 
-  >
-### All Thanks To Our Contributors 
+### All Thanks To Our Contributors
+
 <a href="https://github.com/anasty17/mirror-leech-telegram-bot/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=anasty17/mirror-leech-telegram-bot" />
 </a>
 
------
+---
